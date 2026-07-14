@@ -1,0 +1,14 @@
+/node_modules
+/.next
+/out
+/build
+.DS_Store
+*.pem
+npm-debug.log*
+.env*
+next-env.d.ts
+
+# Claude Code / skills locales (herramientas, no forman parte del proyecto)
+/.claude
+/.agents
+/skills-lock.json

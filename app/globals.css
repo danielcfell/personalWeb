@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  /* Layered blacks — base dominates */
+  --color-ink: #0a0a0a;
+  --color-surface: #111111;
+  --color-surface-2: #161616;
+
+  /* Hairlines / borders */
+  --color-line: #222222;
+  --color-line-2: #2a2a2a;
+
+  /* Text — warm bone, never pure white */
+  --color-bone: #ece8e1;
+  --color-muted: #8a8a87;
+  --color-faint: #5a5a57;
+
+  /* Single accent — Electric Cyan, the one accent across the whole site */
+  --color-signal: #22d3ee;
+
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-bone);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-signal);
+  color: #0a0a0a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Slow vertical "data stream" for the binary texture */
+@keyframes binary-stream {
+  to {
+    transform: translateY(-50%);
+  }
+}
+.binary-stream {
+  animation-name: binary-stream;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .binary-stream {
+    animation: none;
+  }
+}
+
+/* Glass fallback when the user reduces transparency */
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    background-color: #121212 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
