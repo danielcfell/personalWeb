@@ -8,5 +8,5 @@ export const hero = {
   primary: { label: "Ver proyectos", href: "#proyectos" } satisfies Cta,
   secondary: { label: "Contacto", href: "#contacto" } satisfies Cta,
   // Métricas ocultas por ahora (Daniel las quitó). Vacío = no se renderiza.
-  metrics: [] satisfies Metric[],
+  metrics: [] as Metric[],
 };
