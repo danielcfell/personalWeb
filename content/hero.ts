@@ -7,6 +7,7 @@ export const hero = {
   sub: "Soy Daniel, ingeniero de software full-stack. Diseño y desarrollo aplicaciones web completas — del backend a la interfaz — cuidando el detalle, el rendimiento y la experiencia de usuario. Basado en Quito, Ecuador.",
   primary: { label: "Ver proyectos", href: "#proyectos" } satisfies Cta,
   secondary: { label: "Contacto", href: "#contacto" } satisfies Cta,
+  cv: { label: "Descargar CV", href: "/CV_Daniel_Castillo.pdf" } satisfies Cta,
   // Métricas ocultas por ahora (Daniel las quitó). Vacío = no se renderiza.
   metrics: [] as Metric[],
 };

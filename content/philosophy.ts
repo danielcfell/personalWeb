@@ -1,7 +1,7 @@
 export type Principle = { title: string; description: string };
 
 export const philosophy = {
-  index: "04",
+  index: "05",
   label: "Filosofía",
   // Manifiesto — tipografía protagonista.
   statement:

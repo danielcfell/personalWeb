@@ -8,7 +8,7 @@ export type ContactLink = {
 };
 
 export const contact = {
-  index: "05",
+  index: "06",
   label: "Contacto",
   heading: "¿Trabajamos juntos?",
   sub: "Estoy abierto a nuevas oportunidades y proyectos. Si buscas a alguien para tu equipo o quieres conversar, escríbeme por el medio que prefieras.",

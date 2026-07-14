@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { motion, useReducedMotion, type Variants } from "motion/react";
-import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowRight, ArrowUpRight, DownloadSimple } from "@phosphor-icons/react";
 import { HeroTech } from "@/components/HeroTech";
 import { hero } from "@/content/hero";
 
@@ -118,6 +118,17 @@ export function Hero() {
               <ArrowRight
                 weight="bold"
                 className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </a>
+            <a
+              href={hero.cv.href}
+              download
+              className="group inline-flex items-center gap-2 px-2 py-3.5 text-sm text-muted transition-colors duration-200 ease-out hover:text-bone active:scale-[0.98]"
+            >
+              {hero.cv.label}
+              <DownloadSimple
+                weight="bold"
+                className="size-4 text-faint transition-all duration-300 group-hover:translate-y-0.5 group-hover:text-signal"
               />
             </a>
             <a
