@@ -31,6 +31,22 @@ export const projects = {
       liveUrl: "https://norteweb-ia.vercel.app",
     },
     {
+      name: "Psicología Para Ti",
+      description:
+        "Sitio para un centro de psicología en Quito: enfoques terapéuticos con precios presenciales y online, proceso de atención en tres pasos, testimonios y un formulario de agendamiento conectado a WhatsApp.",
+      tech: ["Next.js", "React", "CSS"],
+      desktop: [
+        { src: "/projects/psicologia-desktop-1.webp", alt: "Psicología Para Ti — inicio" },
+        { src: "/projects/psicologia-desktop-2.webp", alt: "Psicología Para Ti — enfoques terapéuticos" },
+        { src: "/projects/psicologia-desktop-3.webp", alt: "Psicología Para Ti — por qué elegirnos" },
+        { src: "/projects/psicologia-desktop-4.webp", alt: "Psicología Para Ti — agendar cita" },
+      ],
+      mobile: [
+        { src: "/projects/psicologia-mobile-1.webp", alt: "Psicología Para Ti móvil — inicio" },
+        { src: "/projects/psicologia-mobile-2.webp", alt: "Psicología Para Ti móvil — enfoques terapéuticos" },
+      ],
+    },
+    {
       name: "Foody",
       description:
         "Plataforma web de gestión para restaurantes: acceso con autenticación, administración de menú y seguimiento de pedidos, con una interfaz rápida y pensada primero para el celular.",
