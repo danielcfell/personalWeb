@@ -37,6 +37,7 @@ function Carousel({
   reduce: boolean;
 }) {
   const shot = shots[index];
+  if (!shot) return null;
   return (
     <AnimatePresence initial={false} mode="popLayout">
       <motion.img
@@ -177,11 +178,14 @@ function ProjectRow({
 }) {
   const hasMobile = !!project.mobile?.length;
   const [mode, setMode] = useState<"desktop" | "mobile">("desktop");
-  const [i, setI] = useState(0);
+  const [rawI, setI] = useState(0);
   const touchX = useRef<number | null>(null);
 
   const shots = mode === "mobile" && project.mobile ? project.mobile : project.desktop;
   const count = shots.length;
+  // Desktop y mobile pueden tener distinta cantidad de capturas: al alternar,
+  // el índice anterior puede quedar fuera de rango antes de que corra el efecto.
+  const i = Math.min(rawI, Math.max(count - 1, 0));
 
   useEffect(() => setI(0), [mode]);
 
