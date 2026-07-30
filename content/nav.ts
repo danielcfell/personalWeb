@@ -6,7 +6,8 @@ export const nav = {
     { label: "Proyectos", href: "#proyectos" },
     { label: "Experiencia", href: "#experiencia" },
     { label: "Filosofía", href: "#filosofia" },
-    { label: "Contacto", href: "#contacto" },
+    // Contacto no va aqui: ya tiene su propio boton (nav.cta) a la derecha.
   ] satisfies NavItem[],
+  cv: { label: "CV", href: "/CV_Daniel_Castillo.pdf" } satisfies Cta,
   cta: { label: "Contacto", href: "#contacto" } satisfies Cta,
 };

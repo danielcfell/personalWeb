@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowUpRight, DownloadSimple } from "@phosphor-icons/react";
 import { site } from "@/content/site";
 import { nav } from "@/content/nav";
 
@@ -45,14 +45,17 @@ export function Nav() {
         {/* Wordmark */}
         <a
           href="#top"
-          className="group relative z-10 flex items-center gap-2 font-display text-base font-bold tracking-[0.06em] text-bone"
+          className="group relative z-10 flex shrink-0 items-center gap-2 whitespace-nowrap font-display text-base font-bold tracking-[0.06em] text-bone"
         >
           {site.name}
           <span className="size-1.5 bg-signal shadow-[0_0_8px_rgba(34,211,238,0.8)] transition-transform duration-300 group-hover:scale-125" />
         </a>
 
-        {/* Center nav — active item sits in its own lime pill */}
-        <nav className="relative z-10 hidden items-center gap-1 md:flex">
+        {/* Center nav — active item sits in its own lime pill.
+            Aparece desde 1100px: por debajo, el nav no cabe junto al wordmark y
+            los botones, y la capsula desbordaba partiendo el wordmark en varias
+            lineas (pasaba ya con el breakpoint md original). */}
+        <nav className="relative z-10 hidden items-center gap-1 min-[1100px]:flex">
           {nav.items.map((item, i) => {
             const isActive = active === item.href;
             return (
@@ -91,17 +94,35 @@ export function Nav() {
           })}
         </nav>
 
-        {/* CTA — solid cyan, subtle glow */}
-        <a
-          href={nav.cta.href}
-          className="group relative z-10 inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink shadow-[0_0_20px_rgba(34,211,238,0.35)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.55)] active:translate-y-px"
-        >
-          {nav.cta.label}
-          <ArrowUpRight
-            weight="bold"
-            className="size-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-          />
-        </a>
+        <div className="relative z-10 flex shrink-0 items-center gap-2">
+          {/* CV — ghost outline, secundario frente al CTA de contacto.
+              Oculto por debajo de sm: en un movil de 390px la capsula ya va
+              justa con el wordmark y el CTA. Ahi el enlace del hero cubre la
+              descarga. */}
+          <a
+            href={nav.cv.href}
+            download
+            className="group hidden shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted transition-all duration-300 hover:border-signal/40 hover:text-signal active:translate-y-px sm:inline-flex"
+          >
+            {nav.cv.label}
+            <DownloadSimple
+              weight="bold"
+              className="size-3.5 text-faint transition-all duration-300 group-hover:translate-y-0.5 group-hover:text-signal"
+            />
+          </a>
+
+          {/* CTA — solid cyan, subtle glow */}
+          <a
+            href={nav.cta.href}
+            className="group inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-signal px-5 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink shadow-[0_0_20px_rgba(34,211,238,0.35)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.55)] active:translate-y-px"
+          >
+            {nav.cta.label}
+            <ArrowUpRight
+              weight="bold"
+              className="size-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
+          </a>
+        </div>
       </div>
     </header>
   );
