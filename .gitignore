@@ -13,3 +13,7 @@ tsconfig.tsbuildinfo
 /.claude
 /.agents
 /skills-lock.json
+
+# El zip trae tambien el CV en ingles, que no se publica. El fuente del CV en
+# espanol si se versiona, en cv/cv_es.html.
+/cv/files.zip
